@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="setting.css">
+</head>
+<body>
+    <header class="settings-nav">
+        <div class="brand">
+            <img src="../img/logo.png" alt="LibriNet logo">
+            <h2>LibriNet</h2>
+        </div>
+        <a href="Admin.php" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+    </header>
+
+    <main class="settings-page">
+        <section class="settings-hero">
+            <i class="fa-solid fa-gear"></i>
+            <h1>Admin Settings</h1>
+            <p>Update your admin profile, login ID, and password.</p>
+        </section>
+
+        <section class="settings-card">
+            <h3><i class="fa-solid fa-user-shield"></i> Profile Information</h3>
+            <form id="settingsForm" onsubmit="saveAdminSettings(event)">
+                <div class="profile-image-row">
+                    <img src="img/logo.png" alt="Admin profile preview" id="settingsProfilePreview">
+                    <div>
+                        <label for="settingsProfileImage" class="image-btn"><i class="fa-solid fa-image"></i> Change Profile Image</label>
+                        <input type="file" id="settingsProfileImage" accept="image/*" onchange="previewProfileImage(event)">
+                        <button type="button" class="secondary-btn" onclick="removeProfileImage()">Remove Image</button>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="settingsAdminId">Admin ID</label>
+                        <input type="text" id="settingsAdminId" required pattern="^ADM[0-9]{4}$" title="Admin ID must look like ADM1234">
+                    </div>
+                    <div class="field">
+                        <label for="settingsEmail">Email</label>
+                        <input type="email" id="settingsEmail" placeholder="admin@email.com">
+                    </div>
+                    <div class="field">
+                        <label for="settingsPhone">Phone Number</label>
+                        <input type="tel" id="settingsPhone" placeholder="0912345678">
+                    </div>
+                    <div class="field">
+                        <label for="settingsRole">Role</label>
+                        <select id="settingsRole">
+                            <option value="Admin">Admin</option>
+                            <option value="Super Admin">Super Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3><i class="fa-solid fa-lock"></i> Security</h3>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" placeholder="Required only when changing password">
+                    </div>
+                    <div class="field">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" minlength="6" placeholder="At least 6 characters">
+                    </div>
+                    <div class="field">
+                        <label for="confirmNewPassword">Confirm New Password</label>
+                        <input type="password" id="confirmNewPassword" minlength="6">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="save-btn"><i class="fa-solid fa-floppy-disk"></i> Save Settings</button>
+                    <button type="button" class="secondary-btn" onclick="loadAdminSettings()">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="setting.js"></script>
+</body>
+</html>

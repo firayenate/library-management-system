@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1f3f66 30%, #ffffff 30%);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Titles */
+.container h3 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.container h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: 20px;
+}
+
+.container p {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    margin-top: 20px;
+}
+
+/* Form Card */
+.form {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Icon */
+#icon {
+    width: 60px;
+    height: 60px;
+    background-color: #153454;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    margin: 0 auto 15px;
+}
+
+/* Form title */
+.form h2 {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.form_input h5 {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Inputs */
+.form input,
+.form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Password box */
+.input-box {
+    position: relative;
+}
+
+.input-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #153454;
+}
+
+.input-box input {
+    padding-left: 35px;
+}
+
+/* Button */
+#btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: #153454;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+#btn:hover {
+    background-color: #0d253b;
+}
+
+/* Link */
+.form a {
+    text-decoration: none;
+    color: #153454;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .container h1 {
+        font-size: 1.8rem;
+    }
+    .form {
+        width: 95%;
+        padding: 20px 15px;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h3 {
+        font-size: 1.1rem;
+    }
+    .container h1 {
+        font-size: 1.5rem;
+    }
+    .container p {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+    #icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    .form {
+        padding: 15px;
+    }
+}

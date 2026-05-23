@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+        <script src="https://kit.fontawesome.com/93f4cc41cc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <h3><i class="fa-solid fa-book-open"></i> Library Management System</h3>
+        <h1>Login to WKU</h1>
+        <p>Access the library management system</p>
+
+        <div class="form">
+            <i class="fa-solid fa-user-shield" id="icon"></i>
+            <div class="login-tabs">
+                <button type="button" id="adminTab" class="login-tab active" onclick="setLoginMode('admin')">Admin</button>
+                <button type="button" id="studentTab" class="login-tab" onclick="setLoginMode('student')">Student</button>
+            </div>
+            <h2 id="loginTitle">Admin Login</h2>
+            <div class="form-login">
+                <form id="loginForm" method="POST" action="login_handler.php">
+                   <input type="hidden" name="login_type" id="loginType" value="admin">
+                   <h5 id="idLabel">Admin ID:</h5>
+                <div class="input-box">
+                    <i class="fa-solid fa-id-card"></i>
+                    <input type="text" id="loginId" name="login_id" placeholder="Enter ID" required>
+                </div>
+                    <h5>Password:</h5>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="loginPassword" name="password" placeholder="Enter password" required minlength="6">
+                    </div>
+
+                    <button type="submit" id="btn">Login</button>
+          <p id="registerStudentText" style="display:none;">Need a student account? <a href="registration_user.html">Register Student</a></p>
+                </form>
+            </div>
+            </div>
+    </div>
+    <script>
+        let loginMode = 'admin';
+
+        function setLoginMode(mode) {
+            loginMode = mode;
+            document.getElementById('adminTab').classList.toggle('active', mode === 'admin');
+            document.getElementById('studentTab').classList.toggle('active', mode === 'student');
+            
+            document.getElementById('loginTitle').textContent = mode === 'admin' ? 'Admin Login' : 'Student Login';
+            document.getElementById('idLabel').textContent = mode === 'admin' ? 'Admin ID:' : 'Student ID:';
+            document.getElementById('loginId').placeholder = mode === 'admin' ? 'Enter admin ID' : 'Enter student ID';
+            document.getElementById('icon').className = mode === 'admin' ? 'fa-solid fa-user-shield' : 'fa-solid fa-user-graduate';
+            
+            document.getElementById('registerStudentText').style.display = mode === 'student' ? 'block' : 'none';
+            
+            document.getElementById('loginType').value = mode;
+        }
+    </script>
+</body>
+</html>

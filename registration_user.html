@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - WKU</title>
+    <script src="https://kit.fontawesome.com/93f4cc41cc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <div class="container">
+        <h3><i class="fa-solid fa-book-open"></i> WKU Library System</h3>
+        <h1>Create Student Account</h1>
+        <p>Register as a student to access the digital library</p>
+
+        <div class="form">
+            <i class="fa-solid fa-user-graduate" id="icon"></i>
+            <h2>Student Register</h2>
+
+            <div class="form_input">
+                <form method="POST" action="user/register_user.php">
+
+                    <h5>Full Name:</h5>
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="regName" name="full_name" placeholder="Enter full name" required minlength="3">
+                    </div>
+
+                    <h5>Student ID:</h5>
+                    <div class="input-box">
+                        <i class="fa-solid fa-id-card"></i>
+                        <input type="text" id="regId" name="student_id" placeholder="e.g. NSR/0000/00" pattern="^NSR/\d{4}/\d{2}$" title="Student ID must be in format NSR/0000/00 (e.g. NSR/1234/25)" required>
+                    </div>
+
+                    <h5>Email:</h5>
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="regEmail" name="email" placeholder="Enter email" required>
+                    </div>
+
+                    <h5>Department:</h5>
+                    <div class="input-box">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <input type="text" id="regDept" name="department" placeholder="Enter department" required>
+                    </div>
+
+                    <h5>Year of Study:</h5>
+                    <select id="regYear" name="year_of_study" required>
+                        <option value="">Select Year</option>
+                        <option value="Year 1">Year 1</option>
+                        <option value="Year 2">Year 2</option>
+                        <option value="Year 3">Year 3</option>
+                        <option value="Year 4">Year 4</option>
+                    </select>
+
+                    <h5>Password:</h5>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="regPassword" name="password" placeholder="Create password" required minlength="6">
+                    </div>
+
+                    <h5>Confirm Password:</h5>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="regConfirmPassword" name="confirm_password" placeholder="Confirm password" required minlength="6">
+                    </div>
+
+                    <button type="submit" id="btn">Create Student Account</button>
+
+                    <p style="margin-top: 15px;">Already have an account? <a href="login.html">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
